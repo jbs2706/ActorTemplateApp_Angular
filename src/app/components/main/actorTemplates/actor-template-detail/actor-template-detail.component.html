@@ -1,0 +1,38 @@
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-block backgroundcol">
+      <h2>Project Title: {{ project?.title }}</h2>
+      <h4>Actor Template rolname: {{ actorTemplate?.rolename }}</h4>
+      <h4>Actor Template description: {{ actorTemplate?.taskdescription }}</h4><br><hr>
+      <br>
+      <a class="btn btn-primary btn-lg" [routerLink]="['/main/projectDetail', project?.$key]">Back</a>
+      <a class="btn btn-primary btn-lg" [routerLink]="['/main/personForm', project?.$key, actorTemplate.$key]">New Person</a>
+      <br><hr>
+
+      <!-- For pers in personen -->
+      <div class="container">
+        <div class="row">
+          <div class="col-12" *ngFor="let pers of persons">
+            <div class="cardActor" *ngIf="pers.actorKey==actorTemplate.$key">
+              <h4 class="card-title">Name: {{ pers.name}}</h4>
+              <h4> Email: {{ pers.email }}</h4>
+              <h4> function: {{ pers.function }}</h4>
+              <h4> phone number: {{ pers.phonenumber }}</h4>
+              <h4> notes: {{ pers.notes }}</h4>
+
+              <br><hr>
+
+              <div class="profilephoto">
+                <p>Profile photo</p>
+                <img src="{{getImage(pers.photo)}}" height="100" width="100"/>
+              </div>
+            <br>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

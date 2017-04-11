@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block">
+
+          <h2>Project Form</h2>
+          <p>
+            Create a new project. Please enter the project title and description.
+          </p>
+
+          <hr>
+
+          <div class="form-group row">
+            <label for="formProjectTitle" class="col-2 col-form-label">Title</label>
+            <div class="col-10">
+              <input [(ngModel)]="project.title" name="formTitle" class="form-control" type="text" value="Title..." id="formProjectTitle">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="formProjectDescription" class="col-2 col-form-label">Project description</label>
+            <div class="col-10">
+              <input [(ngModel)]="project.description" name="formDesc" class="form-control" type="text" value="Description..." id="formProjectDescription">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block">
+
+          <a class="btn btn-primary" [routerLink]="['/main/projectenList']" (click)="newProject()">Save</a>
+          <a class="btn btn-primary" [routerLink]="['/main/projectenList']">Cancel</a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

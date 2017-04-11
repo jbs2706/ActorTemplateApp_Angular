@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block">
+
+          <h2>Person Form</h2>
+          <p>
+            Create a new person. Please enter all credentials.
+          </p>
+          <h4>Project: {{project.title}}</h4>
+          <h4>Actor template: {{actorTemplate.rolename}}</h4>
+
+          <hr>
+
+          <div class="form-group row">
+            <label class="col-2 col-form-label">name</label>
+            <div class="col-10">
+              <input [(ngModel)]="person.name" class="form-control" type="text" value="Title...">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label  class="col-2 col-form-label">function</label>
+            <div class="col-10">
+              <input [(ngModel)]="person.function" class="form-control" type="text" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label  class="col-2 col-form-label">email</label>
+            <div class="col-10">
+              <input [(ngModel)]="person.email" class="form-control" type="text" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label  class="col-2 col-form-label">notes</label>
+            <div class="col-10">
+              <input [(ngModel)]="person.notes" class="form-control" type="text" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label  class="col-2 col-form-label">phone number</label>
+            <div class="col-10">
+              <input [(ngModel)]="person.phonenumber" class="form-control" type="text" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label  class="col-2 col-form-label">photo</label>
+            <div class="col-10">
+              <input [(ngModel)]="person.photo" class="form-control" type="text" >
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block">
+          <p>{{project.$key}} +  {{actorTemplate.$key}}</p>
+
+          <a class="btn btn-primary" [routerLink]="['/main/actorDetail', project.$key, actorTemplate.$key ]" (click)="newPerson()">Save</a>
+          <a class="btn btn-primary" [routerLink]="['/main/actorDetail', project.$key, actorTemplate.$key ]">Cancel</a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

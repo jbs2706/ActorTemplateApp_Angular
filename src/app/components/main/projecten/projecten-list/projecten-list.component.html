@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="container">
+    <h1>All projects</h1><br><hr>
+    <p>
+      <a class="btn btn-primary btn-lg" [routerLink]="['/main/projectForm']">
+        Add new
+      </a>
+    </p>
+
+    <div class="row">
+
+      <div class="col-12" *ngFor="let pr of projecten">
+        <div *ngIf="!pr.archived" class="card">
+          <div class="card-block">
+            <div class="card-header">
+              <h4> {{ pr.title}}</h4>
+            </div>
+            <hr>
+            <p class="card-text">{{ pr.description}} </p>
+
+            <!-- Knopje edit word getoond als {project.analist} gelijk is aan {authBackendUid} mbv ngIf -->
+            <a class="btn btn-primary" [routerLink]="['/main/projectDetail', pr.$key]" *ngIf="authBackendUid==pr.analist">Edit</a>
+            <a class="btn btn-primary" [routerLink]="['/main/projectArchief']" (click)="archiveProject(pr.$key)" *ngIf="authBackendUid==pr.analist">Archive</a>
+            </div>
+          </div>
+        <br>
+      </div>
+
+    </div>
+  </div>
+
+</div>

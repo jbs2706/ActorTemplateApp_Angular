@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="container">
+    <h1>Archived projects</h1><br><hr>
+    <div class="row">
+
+      <div class="col-12" *ngFor="let pr of projecten">
+        <div *ngIf="pr.archived" class="card">
+          <div class="card-block">
+            <div class="card-header">
+              <h4> {{ pr.title}}</h4>
+            </div>
+            <hr>
+            <p class="card-text">{{ pr.description}} </p>
+          </div>
+        </div>
+        <br>
+      </div>
+
+    </div>
+  </div>
+
+</div>

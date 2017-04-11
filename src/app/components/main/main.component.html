@@ -1,0 +1,53 @@
+<div class="media hidden-xs-down">
+
+  <img *ngIf="user_photoUrl" class="d-flex mr-3" [src]="user_photoUrl" height="100" width="100">
+
+  <div class="media-body">
+    <h5 class="mt-0">Logged in as: {{user_displayName}}</h5>
+    <b>Email: {{user_email}}</b>  <br>
+    <b>Provider-id: {{user_providerId}}</b> <br>
+    <b>Uid: {{user_firebaseUid}}</b> <br>
+
+  </div>
+
+  <div class="hidden-xs-down">
+    <button type="button" class="btn btn-primary" (click)="logout()" routerLink="login">Logout</button>
+  </div>
+</div>
+
+<div class="hidden-sm-up col-md-12">
+  <div class="card">
+    <img *ngIf="user_photoUrl" class="icoon" [src]="user_photoUrl" height="50%" width="50%"><br>
+    <b>Logged in as:</b> {{user_displayName}}<br><br>
+    <button type="button" class="btn btn-primary" (click)="logout()" routerLink="login">Logout</button>
+  </div>
+</div>
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <h1 class="navbar-brand mb-0">Actor Template WebApp</h1>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/main/home']">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/main/projectenList']">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/main/projectenArchief']">Archive</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="app-content">
+  <router-outlet></router-outlet>
+</div>
